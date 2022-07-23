@@ -1,0 +1,25 @@
+<form method="POST" action="<?php echo $this->getUrl('*/*/save'); ?>"> 
+    <fieldset class="fieldset">
+        <br>
+        <div class="field id required">
+            <label class="form-label" for="name">Log name</label>
+            <div class="control">
+                <input type="text" class="input-text" id="log" name="log"/>
+            </div>
+        </div>
+
+        <div class="field id required">
+            <label class="form-label" for="name">Comment</label>
+            <div class="control">
+                <input type="text" class="input-text" id="comment" name="comment"/>
+            </div>
+        </div>
+
+        
+    <div class="actions-toolbar">
+        <div class="primary">
+            <button id="submit" type="submit" title="submit">Submit
+            </button>
+        </div>
+    </div>
+</form>

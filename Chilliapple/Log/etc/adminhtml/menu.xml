@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+     <add id="Chilliapple_Log::log"
+            title="Log"
+            module="Chilliapple_Log"
+            sortOrder="30"
+            resource="Magento_Backend::content" />
+        <add id="Chilliapple_Log::manage_log"
+            title="Log"
+            module="Chilliapple_Log"
+            sortOrder="20"
+            parent="Chilliapple_Log::log"
+            resource="Magento_Backend::content"
+            action="log/log/index"
+        />
+    </menu>
+</config>

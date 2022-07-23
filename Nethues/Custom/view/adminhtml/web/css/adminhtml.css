@@ -1,0 +1,7 @@
+.admin__menu .level-0.item-custom-menu > a:before {
+    content: '\004E \0065 \0074 \0068 \0075 \0065 \0073';
+    display: block;
+    font-size: 1.6rem;
+    height: 1.6rem;
+    margin-bottom: 0.3rem;
+}

@@ -1,0 +1,17 @@
+<?php
+$object_manager = \Magento\Framework\App\ObjectManager::getInstance();
+$productCollection = $object_manager->create('Contact\Data\Model\ResourceModel\Data\Collection');
+$collection = $productCollection->addFieldToSelect('*')
+    ->addFieldToFilter('id', $this->getRequest()->getParam('id'))->load();
+
+foreach ($collection as $data) {
+?>
+    <div class="card">
+        <a class="btn" href="<?php echo $block->getUrl('Contact/data/index') ?>"><?php echo __('Go Back') ?></a>
+        
+        <h1><?php echo $data->data() . '   ' . $data->comment(); ?></h1>
+        <p><button>Contact</button></p>
+    </div>
+<?php
+}
+?>

@@ -1,0 +1,83 @@
+<?php
+$object_manager = \Magento\Framework\App\ObjectManager::getInstance();
+$productCollection = $object_manager->create('Nethues\Custom\Model\ResourceModel\User\Collection');
+$collection = $productCollection->addFieldToSelect('*')
+    ->addFieldToFilter('id', $this->getRequest()->getParam('id'))->load();
+?>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<?php
+foreach ($collection as $customer) {
+?>
+    <div class="card">
+        <a class="btn" href="<?php echo $block->getUrl('custom/user/index') ?>"><?php echo __('Go Back') ?></a>
+        <img src="<?php echo $this->getBaseUrl() . 'pub/media/user/docs/' . $customer->getImage(); ?>" alt="John" style="width:100%">
+        <h1><?php echo $customer->getFirstName() . '   ' . $customer->getLastName(); ?></h1>
+        <p class="title"><?php echo $customer->getEmail(); ?></p>
+        <p><b><?= $customer->getContactNumber(); ?></b></p>
+        <p><?= $customer->getOtherDetails(); ?> </p>
+        <a href="#"><i class="fa fa-dribbble"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <p><button>Contact</button></p>
+    </div>
+<?php
+}
+?>
+
+<style>
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 500px;
+        margin: auto;
+        text-align: center;
+    }
+
+    .title {
+        color: grey;
+        font-size: 18px;
+    }
+
+    button {
+        border: none;
+        outline: 0;
+        display: inline-block;
+        padding: 8px;
+        color: white;
+        background-color: #000;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+        font-size: 18px;
+    }
+
+    a {
+        text-decoration: none;
+        font-size: 22px;
+        color: black;
+    }
+
+    button:hover,
+    a:hover {
+        opacity: 0.7;
+    }
+
+    .btn {
+        border: none;
+        outline: 0;
+        display: inline-block;
+        padding: 8px;
+        color: white;
+        background-color: #000;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+        font-size: 18px;
+        text-decoration: none;
+    }
+
+    .btn:hover,
+    .btn:hover {
+        opacity: 0.7;
+    }
+</style>

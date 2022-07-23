@@ -1,0 +1,17 @@
+<?php
+$object_manager = \Magento\Framework\App\ObjectManager::getInstance();
+$productCollection = $object_manager->create('Chilliapple\Dynamic\Model\ResourceModel\Title\Collection');
+$collectiontitle = $productCollection->addFieldToSelect('*')
+    ->addFieldToFilter('id', $this->getRequest()->getParam('id'))->load();
+
+foreach ($collectiontitle as $title) {
+?>
+    <div class="card">
+        <a class="btn" href="<?php echo $block->getUrl('dynamic/title/index') ?>"><?php echo __('Go Back') ?></a>
+        
+        <h1><?php echo $title->title() . '   ' . $title->comment(); ?></h1>
+        <p><button>Contact</button></p>
+    </div>
+<?php
+}
+?>

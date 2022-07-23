@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Sample_Fteamplate::fteamplate" title="Hello World" module="Sample_Fteamplate" sortOrder="51" resource="Sample_Fteamplate::fteamplate"/>
+        <add id="Sample_Fteamplate::post" title="Manage Posts" module="Sample_Fteamplate" sortOrder="10" action="Sample_Fteamplate/post" resource="Sample_Fteamplate::post" parent="Sample_Fteamplate::fteamplate"/>
+        <add id="Sample_Fteamplate::hello_configuration" title="Configuration" module="Sample_Fteamplate" sortOrder="99" parent="Sample_Fteamplate::fteamplate" action="adminhtml/system_config/edit/section/fteamplate" resource="Sample_Fteamplate::fteamplate_configuration"/>
+    </menu>
+</config>

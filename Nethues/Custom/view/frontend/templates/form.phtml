@@ -1,0 +1,89 @@
+<?php
+
+?>
+<form method="POST" enctype="multipart/form-data" action="<?php echo $this->getUrl('*/*/save'); ?>" data-hasrequired="<?php echo __('* Required Fields') ?>" data-mage-init='{"validation":{}}'> 
+    <fieldset class="fieldset">
+        <legend class="legend"><span><?= $block->escapeHtml(__('Customer Account Information')) ?></span></legend>
+        <br>
+        <div class="field id required">
+            <label class="label" for="first_name"><span><?= $block->escapeHtml(__('First Name')) ?></span></label>
+            <div class="control">
+                <input type="text" class="input-text" id="first_name" name="first_name" data-validate="{required:true}" />
+            </div>
+        </div>
+
+        <div class="field id required">
+            <label class="label" for="last_name"><span><?= $block->escapeHtml(__('Last Name')) ?></span></label>
+            <div class="control">
+                <input type="text" class="input-text" id="last_name" name="last_name" data-validate="{required:true}" />
+            </div>
+        </div>
+
+        <div id="email" class="field email required">
+            <label class="label" for="email"><span><?= $block->escapeHtml(__('Email')) ?></span></label>
+            <div class="control">
+                <input type="email" class="input-text" id="email" name="email" data-validate="{required:true, 'validate-email':true}" />
+            </div>
+        </div>
+
+        <div id="contact_number" class="field telephone required">
+            <label class="label" for="contact_number"><span><?= $block->escapeHtml(__('Contact Number')) ?></span></label>
+            <div class="control">
+                <input name="contact_number" id="contact_number" title="<?php echo __('Contact Number') ?>" class="input-text" type="number"  maxlength="12" minlength="10" data-validate="{required:true}"/>
+            </div>
+        </div>
+
+        <div class="field profile_image">
+            <label class="label" for="profile_image">
+                <span> <?php $block->escapeHtml(__('Profile Image')) ?></span>
+            </label>
+            <div class="control">
+                <input type="file" accept=".pdf, .png, .jpg, .gif, .docx, .jpeg/*" class="input-text" id="profile_image" name="profile_image" />
+            </div>
+        </div>
+
+        <div id="other_detail" class="field details">
+            <label class="label" for="other_details"><span><?= $block->escapeHtml(__('Other Details')) ?></span></label>
+            <div class="control">
+                <input type="text" class="input-text" id="other_details" name="other_details" />
+            </div>
+        </div>
+    </fieldset>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <button id="submit" type="submit" title="<?= $block->escapeHtml(__('Create Customer')) ?>" class="action submit primary">
+                <span><?= $block->escapeHtml(__('Create Customer')) ?></span>
+            </button>
+        </div>
+    </div>
+</form>
+
+<!-- <script>
+    require(['jquery'], function($) {
+        $(document).ready(function(e) {
+            $('#custom_form').on('submit', (function(e) {
+                e.preventDefault();
+                console.log('on form submit');
+                var formData = new FormData(this);
+                $.ajax({
+                    type: 'POST',
+                    url: $(this).attr('action'),
+                    data: formData,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: function(data) {
+                        location.reload();
+                        console.log("success");
+                        console.log(data);
+                    },
+                    error: function(data) {
+                        console.log("error");
+                        console.log(data);
+                    }
+                });
+            }));
+
+        });
+    });
+</script> -->

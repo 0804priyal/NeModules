@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Sv\CheckoutCustomForm\Api\Data\CustomFieldsInterface" type="Sv\CheckoutCustomForm\Model\Data\CustomFields" />
+    <preference for="Sv\CheckoutCustomForm\Api\CustomFieldsRepositoryInterface" type="Sv\CheckoutCustomForm\Model\CustomFieldsRepository" />
+    <preference for="Sv\CheckoutCustomForm\Api\CustomFieldsGuestRepositoryInterface" type="Sv\CheckoutCustomForm\Model\CustomFieldsGuestRepository" />
+</config>

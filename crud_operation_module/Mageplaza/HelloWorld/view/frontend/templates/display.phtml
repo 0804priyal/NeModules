@@ -1,0 +1,56 @@
+<?php
+
+/**
+ * @var \Mageplaza\HelloWorld\Block\Display $block
+ */
+
+//echo $block->sayHello();
+
+?>
+
+<style>
+table {  font-family: arial, sans-serif;  border-collapse: collapse;  width: 100%;  margin-top: 30px;}
+td, th {  border: 1px solid #dddddd;  text-align: left;  padding: 8px;  }
+tr:nth-child(even) { background-color: #dddddd; }
+.post-id{width:2%} .post-name{width:30%}
+
+</style>
+
+
+
+
+<table>
+     <tr>
+          <th>Post ID</th>
+          <th>Post Name</th>
+          <th>Post URL Key</th>
+          <th>Post Post Content</th>
+          <th>Post Tags</th>
+          <th>Post Status</th>
+          <th>Post Featured Image</th>
+          <th>Created At</th>
+          <th>updated_at</th>
+          <th colspan="2">Action</th>
+     </tr>
+ 
+     <?php
+          foreach ($block->getPostCollection() as $key=>$post){
+     ?>
+     <tr>
+          <td><?php echo $post->getPostId(); ?></td>
+          <td><?php echo $post->getName(); ?></td>
+          <td><?php echo $post->getUrlKey(); ?></td>
+          <td><?php echo $post->getPostContent(); ?></td>
+          <td><?php echo $post->getTags(); ?></td>
+          <td><?php echo $post->getStatus(); ?></td>
+          <td><?php echo $post->getFeaturedImage(); ?></td>
+          <td><?php echo $post->getCreatedAt(); ?></td>
+          <td><?php echo $post->getUpdatedAt(); ?></td>
+          <td><a href="<?php echo $block->getUrl('helloworld/index/edit').'post_id/'.$post->getPostId(); ?>" class="action primary">Edit</a></td>
+          <td><a href="<?php echo $block->getUrl('helloworld/index/delete').'?post_id='.$post->getPostId(); ?>" class="action primary">Delete</a></td>
+     </tr>
+     <?php } ?>
+</table>
+
+</body>
+</html>

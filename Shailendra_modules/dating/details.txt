@@ -1,0 +1,25 @@
+SFTP:
+host:- 18.193.27.226
+port - 22
+username- ec2-user
+ppk file is attached
+
+Website urls:
+http://18.193.27.226/Royalweb/
+http://18.193.27.226/datingecommerce/
+
+Admin Details:
+
+http://18.193.27.226/Royalweb/admin
+admin
+admin@12345
+
+http://18.193.27.226/datingecommerce/admin_1nm5wj/
+admin
+Dating@#123
+
+http://royal-flings.com/admin_1nm5wj/
+admin
+Dating@#12345
+
+http://fairyflair.de/

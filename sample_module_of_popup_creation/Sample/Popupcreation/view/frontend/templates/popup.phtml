@@ -1,0 +1,40 @@
+<div style="display: none;" id="modal-form">
+            <div>
+                <form action="" method="POST" id="enquiry-form-validation" data-hasrequired="" data-mage-init='{"validation":{}}'>
+                    <fieldset class="fieldset">
+                        <div class="field prd_url required">
+                            <label class="label" for="prd_url"><span>Product URL</span></label>
+                            <div class="control">
+                                <input type="text" id="prd_url" name="prd_url" data-validate="{required:true}" value="">
+                            </div>
+                        </div>
+                        <div class="field prd_name required">
+                            <label class="label" for="prd_name"><span>Product Name</span></label>
+                            <div class="control">
+                                <input type="text" id="prd_name" name="prd_name" data-validate="{required:true}" value="">
+                            </div>
+                        </div>
+                        <div class="field customer_name required">
+                            <label class="label" for="customer_name"><span>Customer Name</span></label>
+                            <div class="control">
+                                <input type="text" name="customer_name" data-validate="{required:true}" value="">
+                            </div>
+                        </div>
+                        <div class="field email required">
+                            <label class="label" for="email"><span>Customer Email</span></label>
+                            <div class="control">
+                                
+                                <input type="email" name="email" data-validate="{required:true, 'validate-email':true}" value="">
+                            </div>
+                        </div>
+                        <div class="field comment required">
+                            <label class="label" for="comment"><span>Comment</span></label>
+                            <div class="control">
+                                <input type="text" name="comment" data-validate="{required:true}" value="">
+                            </div>
+                        </div>
+                    </fieldset>
+                    <input type="submit" name="popup_submit" value="Submit your form" class="enable_enquiry">
+                </form>
+            </div>
+        </div>

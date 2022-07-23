@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Config/etc/system_file.xsd">
+    <system>
+        <!-- for add new tab in Magento2 system configuration section -->
+        <tab id="webkul" translate="label" sortOrder="10">
+             <label>Webkul</label>
+        </tab>
+        <!-- for create section -->
+        <section id="sleekaccordian" translate="label" type="text" sortOrder="320" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Sleek Accordian</label>
+            <!-- Assign section to tab -->
+            <tab>webkul</tab>
+            <resource>Chilliapple_Products::configuration</resource>
+            <!-- create group for fields in section -->
+            <group id="parameters" translate="label" type="text" delault="1" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Parameters</label>
+                <!-- create dropdown select type field -->
+                <field id="theme" translate="label comment" sortOrder="6" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Theme</label>
+                    <comment>eg.can use stitch,light,dark theme.</comment>
+                    <!-- source model which we created for drop down options -->
+                    <source_model>Chilliapple\Products\Model\Config\Source\Sleektheme</source_model>
+                </field>
+                <!-- create image upload type field -->
+                <field id="slider_image_1" translate="label" type="image" sortOrder="12" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Slider Image 1</label>
+                    <comment>Allowed file types: jpg, jpeg, gif, png</comment>
+                    <!-- backend model which save uploaded  file on define location -->
+                    <backend_model>Chilliapple\Products\Model\Saveimage</backend_model>
+                    <base_url type="media" scope_info="1">webkul/banner</base_url>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

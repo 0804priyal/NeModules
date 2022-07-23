@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">amgrid_form.amgrid_form_data_source</item>
+            <item name="deps" xsi:type="string">amgrid_form.amgrid_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">Add New Record</item>
+        <item name="config" xsi:type="array">
+            <item name="dataScope" xsi:type="string">data</item>
+            <item name="namespace" xsi:type="string">amgrid_form</item>
+        </item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+        <item name="buttons" xsi:type="array">
+            <item name="save" xsi:type="string">Chilliapple\Amgrid\Block\Adminhtml\Edit\Save</item>
+            <item name="back" xsi:type="string">Chilliapple\Amgrid\Block\Adminhtml\Edit\BackButton</item>
+            <item name="reset" xsi:type="string">Chilliapple\Amgrid\Block\Adminhtml\Edit\ResetButton</item>
+        </item>
+    </argument>
+    <dataSource name="amgrid_form_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Chilliapple\Amgrid\Model\AmgridFormDataProvider</argument>
+            <argument name="name" xsi:type="string">amgrid_form_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">id</argument>
+            <argument name="requestFieldName" xsi:type="string">id</argument>
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="submit_url" xsi:type="url" path="*/*/save"/>
+                </item>
+            </argument>
+        </argument>
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+    </dataSource>
+ 
+    <fieldset name="general_information">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="collapsible" xsi:type="boolean">false</item>
+                <item name="label" xsi:type="string" translate="true">Title Account Information</item>
+                <item name="sortOrder" xsi:type="number">20</item>
+            </item>
+        </argument>
+        <field name="id" sortOrder="10" formElement="input">
+            <settings>
+                <dataType>int</dataType>
+                <visible>false</visible>
+                <label translate="true">Title Id</label>
+            </settings>
+        </field>
+        <field name="status">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="sortOrder" xsi:type="number">10</item>
+                    <item name="dataType" xsi:type="string">boolean</item>
+                    <item name="formElement" xsi:type="string">checkbox</item>
+                    <item name="prefer" xsi:type="string">toggle</item>
+                    <item name="label" xsi:type="string" translate="true">Enable</item>
+                    <item name="valueMap" xsi:type="array">
+                        <item name="true" xsi:type="string">1</item>
+                        <item name="false" xsi:type="string">2</item>
+                    </item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                    <item name="default" xsi:type="string">2</item>
+                </item>
+            </argument>
+        </field>
+        <!-- <field name="option">
+            <settings>
+                <option name="option" sortOrder="30" label="Select">
+                    <inputType name="drop_down" label="Drop-down"/>
+                    <inputType name="radio" label="Radio Buttons"/>
+                    <inputType name="checkbox" label="Checkbox"/>
+                    <inputType name="multiple" label="Multiple Select"/>
+                    <inputType name="new_option_type" label="New Option Type"/>
+                </option>
+            </settings>
+        </field> -->  
+            <field name="category" formElement="select" sortOrder="20">
+                <argument name="data" xsi:type="array">
+                    <item name="options" xsi:type="object">Chilliapple\Amgrid\Model\Source\Category</item>
+                    <item name="config" xsi:type="array">
+                        <item name="source" xsi:type="string">Demo</item>
+                    </item>
+                </argument>
+                <settings>
+                    <dataType>text</dataType>
+                    <label translate="true">Blog Category</label>
+                    <dataScope>category</dataScope>
+                    <validation>
+                        <rule name="required-entry" xsi:type="boolean">true</rule>
+                    </validation>
+                </settings>
+            </field>
+            <field name="restrict_from_guest">
+                <argument name="data" xsi:type="array">
+                    <item name="options" xsi:type="object">Chilliapple\Amgrid\Model\DiscountNumbers</item>
+                    <item name="config" xsi:type="array">
+                        <item name="dataType" xsi:type="string">text</item>
+                        <item name="label" xsi:type="string" translate="true">Restrict from Guests (Users who are not logged in)</item>
+                        <item name="formElement" xsi:type="string">select</item>
+                        <item name="dataScope" xsi:type="string">restrict_from_guest</item>
+                        
+                        <item name="default" xsi:type="string">0</item>
+                        <item name="validation" xsi:type="array">
+                            <item name="required-entry" xsi:type="boolean">true</item>
+                        </item>
+                    </item>
+                </argument>
+            </field>
+
+        <field name="title" sortOrder="20" formElement="input">
+            <settings>
+                <dataType>text</dataType>
+                <visible>true</visible>
+                <label translate="true">Title</label>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+            </settings>
+        </field>
+       
+        
+         
+    </fieldset>
+
+    <dynamicRows name="Sample" sortOrder="50" >
+        <settings>
+            <addButtonLabel translate="true">Add Value</addButtonLabel>
+            <additionalClasses>
+                <class name="admin__field-wide">false</class>
+            </additionalClasses>
+            <componentType>dynamicRows</componentType>
+            <dndConfig>
+                <param name="enabled" xsi:type="boolean">true</param>
+            </dndConfig>
+        </settings>
+        <container name="record" component="Magento_Ui/js/dynamic-rows/record">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="isTemplate" xsi:type="boolean">true</item>
+                    <item name="is_collection" xsi:type="boolean">true</item>
+                    <item name="component" xsi:type="string">Magento_Ui/js/dynamic-rows/record</item>
+                    <item name="componentType" xsi:type="string">container</item>
+                    <item name="dataScope" xsi:type="string">data.row</item>
+                </item>
+            </argument>
+            <field name="name" formElement="input">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="dataScope" xsi:type="string">name</item>
+                        <item name="fit" xsi:type="boolean">false</item>
+                        <item name="label" xsi:type="string" translate="true">NAME</item>
+                        <item name="dataType" xsi:type="string">text</item>
+                    </item>
+                </argument>
+            </field>
+            <field name="value" formElement="input">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="prefixName" xsi:type="string">value</item>
+                        <item name="prefixElementName" xsi:type="string">option_</item>
+                        <item name="dataScope" xsi:type="string">value</item>
+                        <item name="fit" xsi:type="boolean">false</item>
+                        <item name="label" xsi:type="string" translate="true">VALUE</item>
+                        <item name="dataType" xsi:type="string">text</item>
+                    </item>
+                </argument>
+            </field>
+            <actionDelete name="action_delete">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="fit" xsi:type="boolean">true</item>
+                        <item name="prefixElementName" xsi:type="string">option_</item>
+                        <item name="prefixName" xsi:type="string">Params.delete</item>
+                        <item name="dataType" xsi:type="string">text</item>
+                    </item>
+                </argument>
+                <settings>
+                    <dataType>text</dataType>
+                    <componentType>actionDelete</componentType>
+                </settings>
+            </actionDelete>
+        </container>
+    </dynamicRows>  
+</form>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+     <add id="Nethues_Custom::custom_menu"
+            title="Customer"
+            module="Nethues_Custom"
+            sortOrder="20"
+            resource="Magento_Backend::content" />
+        <add id="Nethues_Custom::manage_user"
+            title="Manage Customer"
+            module="Nethues_Custom"
+            sortOrder="10"
+            parent="Nethues_Custom::custom_menu"
+            resource="Magento_Backend::content"
+            action="custom/user/index"
+        />
+    </menu>
+</config>

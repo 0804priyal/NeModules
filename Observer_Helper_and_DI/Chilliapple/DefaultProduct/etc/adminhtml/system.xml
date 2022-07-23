@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="catalog" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+            <group id="frontend" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                 <field id="products_attributes_custom_sku_id" translate="label comment" sortOrder="321" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Product Attributes SKU ID</label>
+                    <comment>Product Attributes SKU ID</comment>
+                    <source_model>Chilliapple\DefaultProduct\Model\Config\Source\DefaultProductsSKU</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

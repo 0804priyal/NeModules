@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+     <add id="Chilliapple_Amgrid::amgrid" title="Chilliapple" module="Chilliapple_Amgrid" sortOrder="40" resource="Magento_Backend::content" />
+        <add id="Chilliapple_Amgrid::manage_amgrid" title="Chilliapple" module="Chilliapple_Amgrid" sortOrder="20" parent="Chilliapple_Amgrid::amgrid" resource="Magento_Backend::content" action="amgrid/amgrid/index"
+        />
+    </menu>
+</config>

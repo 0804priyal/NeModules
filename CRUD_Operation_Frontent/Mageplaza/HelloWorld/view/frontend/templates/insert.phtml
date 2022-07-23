@@ -1,0 +1,58 @@
+<?php 
+
+ // $record = $block->getEditRecord();
+
+echo "Hello";
+
+?>
+<form method="POST" action="<?php echo $this->getUrl('helloworld/index/save', ['_secure' => true]);?>"> 
+    <fieldset class="fieldset">
+        <br>
+        <div class="field id required">
+            <label class="form-label" for="name">Post Name</label>
+            <div class="control">
+                <input type="text" class="input-text" id="name" name="name"/>
+            </div>
+        </div>
+        <div class="field id required">
+            <label class="form-label" for="url_key">Post URL Key</label>
+            <div class="control">
+                <input type="text" class="input-text" id="url_key" name="url_key"/>
+            </div>
+        </div>
+
+        <div class="field id required">
+            <label class="form-label" for="post_content">Post Post Content</label>
+            <div class="control">
+                <input type="text" class="input-text" id="post_content" name="post_content"/>
+            </div>
+        </div>
+
+        <div class="field id required">
+            <label class="form-label" for="tags">Post Tags</label>
+            <div class="control">
+                <input type="text" class="input-text" id="tags" name="tags"/>
+            </div>
+        </div>
+        <div class="field id required">
+            <label class="form-label" for="status">Post Status</label>
+            <div class="control">
+                <input type="text" class="input-text" id="status" name="status"/>
+            </div>
+        </div>
+        <div class="field id required">
+            <label class="form-label" for="featured_image">Post Featured Image</label>
+            <div class="control">
+                <input type="text" class="input-text" id="featured_image" name="featured_image"/>
+            </div>
+        </div>
+
+
+        
+    <div class="actions-toolbar">
+        <div class="primary">
+            <button id="submit" type="submit" title="submit">Submit
+            </button>
+        </div>
+    </div>
+</form>

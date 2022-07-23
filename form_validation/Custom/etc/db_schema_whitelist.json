@@ -1,0 +1,21 @@
+{
+    "custom_user_details_table": {
+        "column": {
+            "id": true,
+            "first_name": true,
+            "last_name": true,
+            "email": true,
+            "contact_number": true,
+            "profile_picture": true,
+            "other_details": true,
+            "status": true,
+            "created_at": true,
+            "updated_at": true,
+            "image": true,
+            "customer_status": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

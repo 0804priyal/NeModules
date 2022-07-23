@@ -1,0 +1,12 @@
+{
+    "log": {
+        "column": {
+            "id": true,
+            "log": true,
+            "comment": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

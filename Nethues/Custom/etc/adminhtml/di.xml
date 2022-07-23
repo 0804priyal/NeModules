@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- for image uploader-->
+    <virtualType name="UserImageUpload" type="Nethues\Custom\Model\ImageUploader">
+        <arguments>
+            <argument name="baseTmpPath" xsi:type="string">user/tmp/docs</argument>
+            <argument name="basePath" xsi:type="string">user/docs</argument>
+            <argument name="allowedExtensions" xsi:type="array">
+                <item name="jpg" xsi:type="string">jpg</item>
+                <item name="jpeg" xsi:type="string">jpeg</item>
+                <item name="gif" xsi:type="string">gif</item>
+                <item name="png" xsi:type="string">png</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Nethues\Custom\Controller\Adminhtml\User\ImageUploader">
+        <arguments>
+            <argument name="imageUploader" xsi:type="object">UserImageUpload</argument>
+        </arguments>
+    </type>
+    <type name="Nethues\Custom\Controller\Adminhtml\User\Save">
+        <arguments>
+            <argument name="imageUploader" xsi:type="object">UserImageUpload</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Ui\Model\Export\MetadataProvider">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="feedback_listing" xsi:type="array">
+                    <item name="deliver_time" xsi:type="string">deliver_time</item>
+                    <item name="created_at" xsi:type="string">created_at</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <!-- /for image uploader-->
+   
+</config>

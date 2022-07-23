@@ -1,0 +1,14 @@
+<form id="productinfo-form" action="<?=$block->getUrl('productinfo/index/savePost')?>" method="post" data-mage-init='{"validation": {"errorClass": "mage-error"}}'>
+	<table>
+		<tr><td><?=__('Name')?></td> <td><input type="text" name="name" ></td></tr>
+		<tr><td><?=__('Email')?></td> <td><input type="text" name="email" data-validate="{required:true,email:true}"></td></tr>
+		<tr><td><?=__('Phone Number')?></td> <td><input type="text" name="phone_number"></td></tr>
+		<tr><td><?=__('Product Name')?></td> <td><input type="text" name="product_name"></td></tr>
+		<tr><td><?=__('Product Sku')?></td> <td><input type="varchar" name="product_sku"></td></tr>
+		<tr><td></td> <td>
+			<button class="actions primary">
+				<span><?=__('Submit')?></span>
+			</button>
+		</td></tr>
+	</table>
+</form>

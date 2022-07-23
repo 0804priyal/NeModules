@@ -1,0 +1,21 @@
+<div class="note"> 
+   
+
+<button type="button" class="action open-modal-form">
+  <span><?php echo __('Please, click to open popup') ?></span>
+ </button>
+
+</div> 
+
+
+<?php echo $this->getChildHtml('popup') ?> 
+
+
+
+<script type="text/x-magento-init">
+    {
+        ".open-modal-form": {
+            "Sample_Popupcreation/js/modal-form": {}
+        }
+    }
+</script>

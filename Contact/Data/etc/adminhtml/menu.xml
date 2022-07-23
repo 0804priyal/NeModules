@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+     <add id="Contact_Data::Contact"
+            title="Contact"
+            module="Contact_Data"
+            sortOrder="30"
+            resource="Magento_Backend::content" />
+        <add id="Contact_Data::manage_contact"
+            title="Contact"
+            module="Contact_Data"
+            sortOrder="20"
+            parent="Contact_Data::Contact"
+            resource="Magento_Backend::content"
+            action="contact/data/index"
+        />
+    </menu>
+</config>

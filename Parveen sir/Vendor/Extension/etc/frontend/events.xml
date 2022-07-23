@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="checkout_cart_product_add_after">
+        <observer name="customprice" instance="Vendor\Extension\Observer\CustomPrice" />
+    </event>
+    <!-- <event name="sales_quote_remove_item">
+        <observer name="removefaucet" instance="Vendor\Extension\Observer\RemoveProduct" />
+    </event> -->
+</config>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Config/etc/system_file.xsd">
+    <system>
+        <tab id="sk_dynamic_fields" translate="label" sortOrder="15">
+            <label>Dynamic Rows</label>
+        </tab>
+        <section id="sk_configuration" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Configuration</label>
+            <tab>sk_dynamic_fields</tab>
+            <resource>SK_DynamicFields::config</resource>
+
+            <!-- Dynamic Fields System Configuration -->
+            <group id="dynamic_field_group" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Dynamic Fields Group</label>
+                <field id="title" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+
+                <field id="dynamic_field" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Dynamic Fields</label>
+                    <backend_model>SK\DynamicFields\Config\Backend\ArraySerialized</backend_model>
+                    <frontend_model>SK\DynamicFields\Block\Adminhtml\Config\Form\Field\DynamicFields</frontend_model>
+                </field>
+                <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+            </group>
+        </section>
+    </system>
+</config>

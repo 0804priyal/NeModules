@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+	
+        <handlingfess_customfee>
+            <handlingfess_customfee>
+                <handlingfess_status>1</handlingfess_status>
+            </handlingfess_customfee>
+        </handlingfess_customfee>
+        <handlingfess_customfee>
+            <handlingfess_customfee>
+                <handlingfess_name>handling fees</handlingfess_name>
+            </handlingfess_customfee>
+        </handlingfess_customfee>
+        <handlingfess_customfee>
+            <handlingfess_customfee>
+                <handlingfess_customfeeamount>0.01</handlingfess_customfeeamount>
+            </handlingfess_customfee>
+        </handlingfess_customfee>
+        <handlingfess_customfee>
+            <handlingfess_customfee>
+                <handlingfess_minimumorderamount>0.01</handlingfess_minimumorderamount>
+            </handlingfess_customfee>
+        </handlingfess_customfee>
+	
+    </default>
+</config>
+			
